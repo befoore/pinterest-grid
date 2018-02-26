@@ -13,7 +13,7 @@ let positionItem = function(elem){
     elem.style.transform = 'translateX('+gridSize*elemW+'px) translateY(0)';
     vertSum.push(elem.offsetHeight);
   } else {
-    let minVertValue = Math.min(...vertSum) || 0;
+    let minVertValue = Math.min.apply(null, vertSum) || 0;
     let minVertKey = vertSum.indexOf(minVertValue) || 0;
     elem.style.transform = 'translateX('+minVertKey*elemW+'px) translateY('+minVertValue+'px)';
     vertSum[minVertKey] += elem.offsetHeight;
@@ -47,7 +47,7 @@ window.addEventListener("resize", function(){
 let resizeContainer = function(){
   let elemW = gridItems[0].offsetWidth || 0;
   let actualWidth = elemW*gridCols;
-  let maxHeight = Math.max(...vertSum);
+  let maxHeight = Math.max.apply(null, vertSum);
 
   container.getElementsByClassName('centerItems')[0].style.width = actualWidth+"px";
   container.getElementsByClassName('centerItems')[0].style.height = maxHeight+"px";
