@@ -1,3 +1,3 @@
 # pinterest-grid
 
-Demo: https://befoore.github.io/pinterest-grid/src/
+Demo: https://horvathpatrik.github.io/pinterest-grid/src/
